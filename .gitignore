@@ -1,0 +1,13 @@
+# Build
+build/
+.cache/
+
+# Personal
+AGENTS.md
+
+# Misc
+wordle-list/
+*.swp
+*.swo
+*~
+.DS_Store
