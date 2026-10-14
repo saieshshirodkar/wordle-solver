@@ -1,0 +1,56 @@
+[package]
+name = "wordle-solver"
+version = "3.0.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Optimal Wordle solver via an entropy decision tree with policy iteration"
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_debug_implementations = "warn"
+unreachable_pub = "warn"
+
+[lints.clippy]
+correctness = { level = "deny", priority = -1 }
+suspicious = { level = "warn", priority = -1 }
+style = { level = "warn", priority = -1 }
+complexity = { level = "warn", priority = -1 }
+perf = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+
+must_use_candidate = "warn"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+if_not_else = "warn"
+redundant_closure = "warn"
+redundant_else = "warn"
+items_after_statements = "warn"
+uninlined_format_args = "warn"
+explicit_iter_loop = "warn"
+modulo_arithmetic = "warn"
+struct_field_names = "warn"
+wildcard_imports = "warn"
+
+cast_possible_wrap = "warn"
+cast_possible_truncation = "warn"
+cast_precision_loss = "warn"
+cast_sign_loss = "warn"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+incremental = false
+
+[profile.release-size]
+inherits = "release"
+opt-level = "s"
+
+[profile.bench]
+inherits = "release"
+debug = true
+strip = false

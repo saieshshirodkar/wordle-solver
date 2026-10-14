@@ -1,6 +1,6 @@
 # Build
-build/
-build-cov/
+/target
+wordle-tree.bin
 .cache/
 
 # Personal
